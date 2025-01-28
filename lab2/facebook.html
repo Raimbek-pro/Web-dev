@@ -7,7 +7,32 @@
                 background-color: rgb(211, 211, 211);
                 font-family: sans-serif;
             }
+            .container {
+            display: flex;
+            justify-content: space-around; 
+            align-items: center;    
+            height: 60vh;           
+        }
+        .container-ver{
+            display: flex;
+            justify-content: center; 
+            align-items: center;    
+            height: 100vh;
+            flex-direction: column; 
+        }
+        .container-reg{
+            display: flex;
+            justify-content: center; 
+            align-items: center;    
+            /* height: 40vh; */
+            flex-direction: column; 
+            /* padding-right: 20px; */
+            gap:20px;
+            
+        }
             .main-block {
+                display: flex;
+                flex-direction: column;
                     background-color: rgba(255, 255, 255, 0.791);
                     width:500px;
                     height:310px;
@@ -15,9 +40,9 @@
                     border-radius: 10px;
                 box-shadow: 70px;
                     padding:20px;
-                   position:absolute;
-                    margin-left:650px;
-                    margin-top:100px;
+             /* position:absolute; */
+                    /* margin-left:650px; */
+                    /* margin-top:100px; */
                     
                 
             }
@@ -28,12 +53,12 @@
                     text-align:center;
                     border-radius: 10px;
                    
-                    margin-left:150px;
+                    /* margin-left:150px; */
                     padding-top:10px;
                     
                     padding-bottom:10px;
-                    margin-bottom:20px;
-                    margin-top: 20px;
+                    /* margin-bottom:20px; */
+                    /* margin-top: 20px; */
                     
             }
             .button-reg {
@@ -43,12 +68,12 @@
                     text-align:center;
                     border-radius: 20px;
                    
-                    margin-left:150px;
+                    /* margin-left:150px; */
                     padding-top:10px;
                     color:white;
                     padding-bottom:10px;
-                    margin-bottom:20px;
-                    margin-top: 20px;
+                    /* margin-bottom:20px; */
+                    /* margin-top: 20px; */
                     
             }
             .button-reg2 {
@@ -58,12 +83,12 @@
                     text-align:center;
                     border-radius: 20px;
                    
-                    margin-left:150px;
+                    /* margin-left:150px; */
                     padding-top:10px;
                     color:white;
                     padding-bottom:10px;
-                    margin-bottom:20px;
-                    margin-top: 20px;
+                    /* margin-bottom:20px; */
+                    /* margin-top: 20px; */
                     
             }
             .button-reg:hover {
@@ -73,12 +98,12 @@
                     text-align:center;
                     border-radius: 20px;
                    
-                    margin-left:150px;
+                    /* margin-left:150px; */
                     padding-top:10px;
                     
                     padding-bottom:10px;
-                    margin-bottom:20px;
-                    margin-top: 20px;
+                    /* margin-bottom:20px; */
+                    /* margin-top: 20px; */
                     
             }
             .button-reg2:hover {
@@ -88,24 +113,24 @@
                     text-align:center;
                     border-radius: 20px;
                    
-                    margin-left:150px;
+                    /* margin-left:150px; */
                     padding-top:10px;
                     
                     padding-bottom:10px;
-                    margin-bottom:20px;
-                    margin-top: 20px;
+                    /* margin-bottom:20px; */
+                    /* margin-top: 20px; */
                     
             }
             .logo{
-                position:absolute;
-               margin-top:100px;
-               margin-left:200px;
+                /* position:absolute; */
+               /* margin-top:100px; */
+               /* margin-left:200px; */
                width: 300px;
             }
             .par{
-                position:absolute;
-                margin-top:400px;
-                margin-left:250px;
+                /* position:absolute; */
+                /* margin-top:400px; */
+                /* margin-left:250px; */
                 font-weight: bold;  
             }
             .form{
@@ -117,6 +142,7 @@
             }
             a:link{
             text-decoration: none;
+          
            
         }
         a:visited{
@@ -128,7 +154,9 @@
             
         }
         #frg{
-            color:rgb(0, 13, 135)
+            color:rgb(0, 13, 135);
+            
+        
         }
   
 .no-space{
@@ -137,6 +165,7 @@
     margin-right:5px;
 }
        .footer{
+       
         width:100%;
         position:fixed;
        padding-left:10px;
@@ -144,9 +173,9 @@
          background-color: rgb(222, 222, 222);
          height: 25%;
          bottom:0;
-         color:rgb(116, 115, 115)
+         color:rgb(116, 115, 115);
        
-        
+ 
          
         
        
@@ -160,11 +189,15 @@
         </title>
     </head>
     <body>
+        <div class= "container">
+            <div class="container-ver">
         <img src="https://raimbek-pro.github.io/Web-dev/lab2/fb.png" class="logo">
         <p class="par">Connect with your friends!</p>
+    </div>
+    <div class="container-ver">
         <div class="main-block">
-       
-            <div class="button-email" style="margin-top:50px">
+       <div class="container-reg">
+            <div class="button-email" >
               <form>
                 <input type="text" placeholder="email" class="form">
               </form> 
@@ -177,20 +210,27 @@
                Sign in
             </div>
         </a>
-            <a href="https://raimbek-pro.github.io/Web-dev/lab2/forgot_fb.html" id="frg"><p style="border-bottom:1px solid black;padding-bottom:5px;margin-left:9px" class="border-bottomb" >forgot your password?</p></a>
+            <a href="https://raimbek-pro.github.io/Web-dev/lab2/forgot_fb.html" id="frg"><p style="border-bottom:1px solid black;display: block; " >forgot your password?</p></a>
             <a href="https://raimbek-pro.github.io/Web-dev/lab2/main_fb.html">
             <div class="button-reg2">
                 Register
             </div>
+            
         </a> 
-        </div>
+    </div>
+        
+        
+       
+    </div>
+    <p ><a href="https://i.iplsc.com/zoolander-no-2-trailer/0004U4TGD292KMIP-C303.webp"><span style="font-weight: bold;color:black;">Create page </span> </a>of a celebrity or organization</p>
         <div class="footer">
                 <p style="border-bottom:1px solid;border-color:rgb(119, 119, 119);padding: 5px; word-spacing: 15px;"> <a href="" class="lang"></a>Русский </a>   <a href=""> Қазақша</a>  <a href=""> English</a>  <a href="">Español </a>   French  Türkçe <span class="no-space">简化 字 </span>  العَرَبِيَّة<span style="border: 1px solid; background-color: rgb(181, 180, 180);padding:3px;border-radius: 2px;margin-left:10px;">+</span></p>
                 <p style="padding-left: 7px;line-height: 1.5; word-spacing: 15px;">Registration <span class="no-space">Sign in</span> Messanger Facebook Lite People Pages Page Categories Facebook Pay Groups <br>Jobs Oculus Portal Instagram Local Fundraisers Marketplace Services Voting Information Center About Us <br><span class="no-space">Create an Ad </span>Developers <span class="no-space">Create a Page </span>Careers Privacy Cookies Ad Choices Terms of Service Help</p>
                 <p style="padding: 7px;margin-top:2px;">Facebook © 2025</p>
         </div>
-        <p style="position:absolute;  margin-left:770px;
-                    margin-top:470px"><a href="https://i.iplsc.com/zoolander-no-2-trailer/0004U4TGD292KMIP-C303.webp"><span style="font-weight: bold;color:black">Create page </span> </a>of a celebrity or organization</p>
 
+
+</div>
+</div>
     </body>
 </html>
