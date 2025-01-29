@@ -1,5 +1,6 @@
 body {
     background: #833ab4;
+    display: flex;
     background: linear-gradient(
       to right,
       #833ab4,#fd1d1d,#fcb045
