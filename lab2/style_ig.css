@@ -7,6 +7,7 @@ body {
       #833ab4,#fd1d1d,#fcb045
     );
    font-family: sans-serif;
+   background-repeat: no-repeat;
   }
   .logo{
       width:700px;
