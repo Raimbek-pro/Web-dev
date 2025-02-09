@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        </head>
+        <body>
+            <p>before the script</p>
+            <script>
+ let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = structuredClone(user);
+
+alert( user.sizes === clone.sizes ); // false, different objects
+
+// user and clone are totally unrelated now
+user.sizes.width = 60;    // change a property from one place
+alert(clone.sizes.width); // 50, not related
+            </script>
+             <p>...After the script.</p>
+             <!-- <script src="/path/to/script.js"></script> external-->
+              
+        </body>
+</html>

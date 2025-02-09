@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-color: white;
+      }
+      .headertop {
+        background-color: black;
+        display: flex;
+        position: static;
+        flex-direction: row;
+        padding:10px;
+      }
+      .inside {
+        color:azure;
+      }
+      .text_main { 
+        display: flex;
+       
+        justify-content: center;
+        font-family: sans-serif;
+        font-size:x-large;
+ 
+     
+      }
+      .create_area{
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        gap:70px;
+
+      }
+      .forms{
+        display:flex;
+       
+      }
+    #main_in{
+        width:500px;
+      }
+ 
+      .main{
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+        align-content: center;
+      }
+     #button{
+        display: flex;
+        border:solid;
+        border-radius: 10px;
+        color:white;
+        background-color:darkblue;
+        background-color:darkblue;
+        padding: 5px;
+     }
+     .tasks{
+        display: flex;
+       
+        border-color: black;
+      align-items: center;
+        
+        flex-direction: column;
+       
+      
+       
+     }
+     img{
+      width:35px;
+     
+     }
+     #task{
+      display: flex;
+      margin:0px;
+      width:50%;
+      padding:10px;
+      border-color: black;
+      border:2px solid;
+      flex-direction: row;
+      justify-content: space-between;
+      
+     }
+     .mark{
+      border:1px solid;
+      border-radius: 2px;
+      padding:2px;
+     }
+     #tasktext{
+      color:black;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+    <div class="headertop">
+      <p class="inside">To-do-list-Raiymbek</p>
+    </div>
+  
+    <p class="text_main">
+        ToDo List
+    </p>
+    <div class="create_area">
+        
+    <form class="forms"  onsubmit="event.preventDefault(); add_task()">
+       <input  type="text" id="main_in" placeholder="New task" name="taskname">
+       <button  type ="submit" >Add</button>
+    </form>
+
+   
+
+    </div>
+
+<div class="tasks" id ="tasksContainer">
+
+
+</div>
+
+</div>
+<script>
+  function add_task() {
+      let taskname = document.getElementById("main_in").value;
+
+   
+      let taskDiv = document.createElement("div");
+      taskDiv.id = "task";
+
+      
+      let checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+
+     
+      let label = document.createElement("label");
+      label.textContent = taskname;
+      label.id = "tasktext";
+
+      
+      let deleteBtn = document.createElement("a");
+      let trashImg = document.createElement("img");
+      trashImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/User-trash.svg/1200px-User-trash.svg.png";
+      trashImg.onclick = function () {
+          taskDiv.remove();
+      };
+      deleteBtn.appendChild(trashImg);
+
+      
+      taskDiv.appendChild(checkbox);
+      taskDiv.appendChild(label);
+      taskDiv.appendChild(deleteBtn);
+
+     
+      document.getElementById("tasksContainer").appendChild(taskDiv);
+
+     
+      document.getElementById("main_in").value = "";
+  }
+</script>
+  </body>
+</html>

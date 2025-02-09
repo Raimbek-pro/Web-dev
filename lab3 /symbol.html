@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        </head>
+        <body>
+            <p>before the script</p>
+            <script>
+              //they are unique 
+              let id1 = Symbol("id");
+let id2 = Symbol("id");
+alert(id1 == id2); // false
+
+let id = Symbol("id");
+alert(id); // TypeError: Cannot convert a Symbol value to a string
+
+
+//hidden property
+let user2 = { // belongs to another code
+  name: "John"
+};
+
+let id3 = Symbol("id");
+
+user[id3] = 1;
+
+alert( user[id3] );
+
+let id4 = Symbol("id");
+
+//object literal
+let user4 = {
+  name: "John",
+  [id4]: 123 // not "id": 123
+};
+
+
+let id5 = Symbol("id");
+let user5 = {
+  name: "John",
+  age: 30,
+  [id]: 123
+};
+
+for (let key in user5) alert(key); // name, age (no symbols)
+
+// the direct access by the symbol works
+alert( "Direct: " + user[id5] ); // Direct: 123
+
+//but it clones
+
+let id6 = Symbol("id");
+let user6 = {
+  [id]: 123
+};
+
+let clone = Object.assign({}, user6);
+
+alert( clone[id] ); // 123
+
+
+//so Symbol.for(key) assigns if didnt exists and reads if exists in js
+// read from the global registry
+let id7 = Symbol.for("id"); // if the symbol did not exist, it is created
+
+// read it again (maybe from another part of the code)
+let idAgain = Symbol.for("id");
+
+// the same symbol
+alert( id6 === idAgain ); // true
+
+//by keys 
+// get symbol by name
+let sym = Symbol.for("name");
+let sym2 = Symbol.for("id");
+
+// get name by symbol
+alert( Symbol.keyFor(sym) ); // name
+alert( Symbol.keyFor(sym2) ); // id
+
+            </script>
+        
+
+              
+        </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        </head>
+        <body>
+            <p>before the script</p>
+            <script>
+                let arr = new Array();
+                 arr = [];
+                 //these are same
+
+                 
+                 let fruits = ["Apple", "Orange", "Plum"];
+
+// same as fruits[fruits.length-1]
+alert( fruits.at(-1) ); // Plum
+
+fruits = ["Apple", "Orange", "Pear"];
+
+alert( fruits.pop() ); // remove "Pear" and alert it
+
+alert( fruits ); // Apple, Orange
+
+fruits = ["Apple", "Orange"];
+
+fruits.push("Pear");
+
+alert( fruits ); 
+
+
+fruits = ["Apple", "Orange", "Pear"];
+
+alert( fruits.shift() ); // remove Apple and alert it
+
+alert( fruits ); // Orange, Pear
+            
+fruits = ["Orange", "Pear"];
+
+fruits.unshift('Apple');
+
+alert( fruits ); // Apple, Orange, Pear
+            </script>
+             <p>...After the script.</p>
+             <!-- <script src="/path/to/script.js"></script> external-->
+              
+        </body>
+</html>

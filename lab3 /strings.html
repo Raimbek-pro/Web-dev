@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        </head>
+        <body>
+            <p>before the script</p>
+            <script>
+                //Strings can be enclosed within either single quotes, double quotes or backticks:
+                let single = 'single-quoted';
+let double = "double-quoted";
+
+let backticks = `backticks`;
+
+
+function sum(a, b) {
+  return a + b;
+}
+
+alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+
+let guestList = `Guests:
+ * John
+ * Pete
+ * Mary
+`;
+
+alert(guestList); // a list of guests, multiple lines
+
+//special characters
+let guestList2 = "Guests:\n * John\n * Pete\n * Mary";
+
+alert(guestList2); // a multiline list of guests, same as above
+
+
+//strings are immutable so 
+let str = 'Hi';
+
+str = 'h' + str[1]; // replace the string
+
+alert( str ); // hi
+
+//case
+alert( 'Interface'.toUpperCase() ); // INTERFACE
+alert( 'Interface'.toLowerCase() ); // interface
+
+
+//character case 
+alert( 'Interface'[0].toLowerCase() ); // 'i'
+
+let str3= 'Widget with id';
+
+alert( str3.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+alert( str3.indexOf('widget') ); // -1, not found, the search is case-sensitive
+
+alert( str3.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+
+
+let str2 = 'As sly as a fox, as strong as an ox';
+
+let target = 'as'; // let's look for it
+
+let pos = 0;
+while (true) {
+  let foundPos = str2.indexOf(target, pos);
+  if (foundPos == -1) break;
+
+  alert( `Found at ${foundPos}` );
+  pos = foundPos + 1; // continue the search from the next position
+}
+
+//or shorter
+let pos2 = -1;
+while ((pos2 = str.indexOf(target, pos2 + 1)) != -1) {
+  alert( pos2 );
+}
+
+//includes
+alert( "Widget with id".includes("Widget") ); // true
+
+alert( "Hello".includes("Bye") ); // false
+
+alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
+alert( "Widget".endsWith("get") ); 
+
+
+//getting substring
+let str4 = "stringify";
+alert( str4.slice(0, 5) ); // 'strin', the substring from 0 to 5 (not including 5)
+alert( str4.slice(0, 1) ); 
+
+str = "stringify";
+alert( str.slice(2) ); 
+
+ str = "stringify";
+
+// these are same for substring
+alert( str.substring(2, 6) ); // "ring"
+alert( str.substring(6, 2) ); // "ring"
+
+// ...but not for slice:
+alert( str.slice(2, 6) ); // "ring" (the same)
+alert( str.slice(6, 2) ); // "" (an empty string)
+
+
+//comparing
+
+alert( 'a' > 'Z' ); // true
+
+// different case letters have different codes
+alert( "Z".codePointAt(0) ); // 90
+alert( "z".codePointAt(0) ); // 122
+alert( "z".codePointAt(0).toString(16) )
+
+alert( String.fromCodePoint(90) ); // Z
+alert( String.fromCodePoint(0x5a) ); // Z
+
+
+//Luckily, modern browsers support the internationalization standard ECMA-402.
+            </script>
+             <p>...After the script.</p>
+             <!-- <script src="/path/to/script.js"></script> external-->
+
+
+              
+        </body>
+</html>
