@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        </head>
+        <body>
+            <p>before the script</p>
+            <script>
+   let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+if (year == 2015) alert( 'You are right!' );
+
+// let cond = (year == 2015); // equality evaluates to true or false
+
+// if (cond) {
+//   ...
+// }
+
+ year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year == 2015) {
+  alert( 'You guessed it right!' );
+} else {
+  alert( 'How can you be so wrong?' ); // any value except 2015
+}
+
+
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+  (age < 18) ? 'Hello!' :
+  (age < 100) ? 'Greetings!' :
+  'What an unusual age!';
+
+alert( message );
+
+
+let company = prompt('Which company created JavaScript?', '');
+
+(company == 'Netscape') ?
+   alert('Right!') : alert('Wrong.');
+            </script>
+        
+
+              
+        </body>
+</html>
