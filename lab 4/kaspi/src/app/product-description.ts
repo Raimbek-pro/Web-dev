@@ -5,4 +5,6 @@ export interface ProductDescription {
    rating:string;
    photo:string;
    link:string;
+   category:string;
+   likes?: number;
 }

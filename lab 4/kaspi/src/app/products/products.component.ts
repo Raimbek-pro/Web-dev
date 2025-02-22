@@ -23,4 +23,12 @@ export class ProductsComponent {
     const telegramUrl = `https://t.me/share/url?url=${productLink}&text=${message}`;
     window.open(telegramUrl, '_blank');
   }
+  likeProduct(index: number) {
+    this.products[index].likes = (this.products[index].likes || 0) + 1;
+  }
+
+  // Function to remove product
+  removeProduct(index: number) {
+    this.products.splice(index, 1);
+  }
 }

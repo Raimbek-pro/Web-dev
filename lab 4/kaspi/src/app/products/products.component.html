@@ -1,4 +1,4 @@
-<section class="listing" *ngFor="let product of products">
+<div class="container"><section class="listing" *ngFor="let product of products let i =index">
   <a href={{product.link}}>
   <img
     class="listing-photo"
@@ -12,4 +12,11 @@
 </a>
 <button (click)="shareOnWhatsApp(product.link)">Share on WhatsApp</button>
 <button (click)="shareOnTelegram(product.link)">Share on Telegram</button>
+
+    <p>Likes: {{ product.likes }}</p>
+    <button (click)="likeProduct(i)">Like ❤️</button>
+
+  
+    <button (click)="removeProduct(i)">Remove ❌</button>
 </section>
+</div>
