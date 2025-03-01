@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,EventEmitter,Input ,Output } from '@angular/core';
 import { ProductDescription } from '../product-description';
 import { ProductsComponent } from '../products/products.component';
 import { ActivatedRoute } from '@angular/router';
@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
+ @Output() productDeleted = new EventEmitter<number>();
   categoryName: string = 'All';
   filteredProducts: ProductDescription[] = [];
   constructor(private route: ActivatedRoute) {}
@@ -36,6 +37,10 @@ export class ProductListComponent implements OnInit {
     } else {
       this.filteredProducts = this.products.filter(p => p.category === this.categoryName);
     }
+  }
+  onDeleteProduct(productId: number) {
+    console.log("Deleting product with ID:", productId);
+    this.productDeleted.emit(productId);  
   }
   baseUrl="https://resources.cdn-kaspi.kz/img/m/p"
   products: ProductDescription [] = [

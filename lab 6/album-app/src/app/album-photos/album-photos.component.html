@@ -1,0 +1,4 @@
+<div *ngFor="let album of data">
+   <img [src]="album.thumbnailUrl" [alt]="album.title">
+   <p *ngIf="album.title">{{ album.title }}</p>  
+ </div>

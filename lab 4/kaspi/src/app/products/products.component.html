@@ -14,9 +14,9 @@
 <button (click)="shareOnTelegram(product.link)">Share on Telegram</button>
 
     <p>Likes: {{ product.likes }}</p>
-    <button (click)="likeProduct(i)">Like ❤️</button>
+    <button (click)="likeProduct(product.id)">Like ❤️</button>
 
   
-    <button (click)="removeProduct(i)">Remove ❌</button>
+    <button (click)="removeProduct(product.id)">Remove ❌</button>
 </section>
 </div>

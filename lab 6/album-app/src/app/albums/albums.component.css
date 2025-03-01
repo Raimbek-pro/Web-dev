@@ -1,0 +1,5 @@
+#albums{
+    font-family: serif;
+    display: flex;
+    flex-direction: column;
+}
